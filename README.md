@@ -10,7 +10,7 @@ Este repositório fornece um exemplo de como integrar a nossa API de consulta CN
 git clone https://github.com/cnpja/example-harbour.git
 ```
 
-2\. Substitua a variável `CHAVEAPI` no arquivo `cnpja.prg` com sua Chave de API disponível em:
+2\. Substitua a variável `CHAVEAPI` no arquivo `cnpja.prg` com sua Chave de API, caso ainda não tenha conta crie gratuitamente em:
 
 [CNPJá! - Minha Conta](https://www.cnpja.com/me)
 
