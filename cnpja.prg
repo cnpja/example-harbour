@@ -3,9 +3,11 @@ PROCEDURE Main(cCNPJA)
 IF EMPTY(cCNPJA)
    cCNPJA="33000167000101"
 ENDIF
+
 CLS
+
 // Coloque aqui sua Chave de API
-CHAVEAPI="b031b946-a23e-4e09-84e9-ffaeb0329393-1a474681-82b1-44b7-a193-4a5a39b562a8"
+CHAVEAPI="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 
 // Cria um objeto para requisicao HTTP
 ? "Buscando CNPJ " + cCNPJA + "..."
