@@ -33,7 +33,7 @@ hCNPJA := JSontoHash(JSONCNPJ)
 ? "DADOS DA EMPRESA"
 ? "CNPJ: "+TRANSFORM(cCNPJA, "@R 99.999.999/9999-99")
 ? "NOME: "+hCNPJA["company"]["name"]
-? "Endere‡o: "+ hCNPJA["address"]["street"]+", "+hCNPJA["address"]["number"]
+? "Endereço: "+ hCNPJA["address"]["street"]+", "+hCNPJA["address"]["number"]
 ? "Complemento: "+IIF(!EMPTY(hCNPJA["address"]["details"]), hCNPJA["address"]["details"], "")
 ? "Bairro: "+ hCNPJA["address"]["district"]
 ? "Cidade: "+ hCNPJA["address"]["city"]
@@ -56,6 +56,7 @@ nEMAILS := LEN(hCNPJA["emails"])
 FOR X=1 TO nEMAILS
 	? "Email: "+hCNPJA["emails"][X]["address"]
 NEXT	
+// RETURN hCNPJA
 
 Function JSontoHash( cStringJson )
 /***
