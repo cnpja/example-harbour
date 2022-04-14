@@ -20,10 +20,10 @@ http:SetRequestHeader("Authorization", CHAVEAPI)
 // Envia e imprime a resposta
 http:send()
 
-// DEFINE VARIµVEL DO TIPO HASH VAZIA
+// DEFINE VARIÁVEL DO TIPO HASH VAZIA
 hCNPJA := HASH()
 
-// RESOLVE ACENTUA€ÇO GRµFICA DA LINGUA PORTUGUESA
+// RESOLVE ACENTUAÇÃO GRÁFICA DA LINGUA PORTUGUESA
 JSONCNPJ := HB_AnsiToOem(http:responseText)
 
 // DECODIFICA JSON
