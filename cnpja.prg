@@ -1,7 +1,7 @@
 PROCEDURE Main(cCNPJA)
 // Escolha o CNPJ a ser pesquisado
 IF EMPTY(cCNPJA)
-	cCNPJA="33000167000101"
+   cCNPJA="33000167000101"
 ENDIF
 CLS
 // Coloque aqui sua Chave de API
@@ -75,7 +75,8 @@ Return hJson
 
 
 /*
-
+Hash completo:
+(Se precisar de mais alguma informação daqui é só seguir o exemplo lá em cima)
 {"updated":"2022-04-13T13:55:05Z","taxId":"33000167000101","alias":"PETROBRAS - EDISE","founded":"1966-09-28","head":true,
 "company":{"id":33000167,"name":"PETROLEO BRASILEIRO S A PETROBRAS",
 	"jurisdiction":"Uniao",
