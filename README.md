@@ -14,10 +14,14 @@ git clone https://github.com/cnpja/example-harbour.git
 
 [CNPJá! - Minha Conta](https://www.cnpja.com/me)
 
-3\. Execute a CLI do Harbour para criar o arquivo executável:
+3\. Execute a CLI do xHarbour ou Harbour para criar o arquivo executável:
 
 ```
 hbmake cnpja
+```
+ou
+```
+hbmk2 cnpja
 ```
 
 4\. Abra o recém criado `cnpja.exe` para testar.
