@@ -18,12 +18,10 @@ http:SetRequestHeader("Authorization", CHAVEAPI)
 // Envia e imprime a resposta
 http:send()
 
-inkey(0)
-
-// DEFINE VARIµVEL DO TIPO HASH VAZIA
+// DEFINE VARIÂµVEL DO TIPO HASH VAZIA
 hCNPJA := HASH()
 
-// RESOLVE ACENTUA€ÇO GRµFICA DA LINGUA PORTUGUESA
+// RESOLVE ACENTUAâ‚¬Ã‡O GRÂµFICA DA LINGUA PORTUGUESA
 JSONCNPJ := HB_AnsiToOem(http:responseText)
 
 // DECODIFICA JSON
@@ -33,7 +31,7 @@ hCNPJA := JSontoHash(JSONCNPJ)
 ? "DADOS DA EMPRESA"
 ? "CNPJ: "+TRANSFORM(cCNPJA, "@R 99.999.999/9999-99")
 ? "NOME: "+hCNPJA["company"]["name"]
-? "Endere‡o: "+ hCNPJA["address"]["street"]+", "+hCNPJA["address"]["number"]
+? "Endereâ€¡o: "+ hCNPJA["address"]["street"]+", "+hCNPJA["address"]["number"]
 ? "Complemento: "+IIF(!EMPTY(hCNPJA["address"]["details"]), hCNPJA["address"]["details"], "")
 ? "Bairro: "+ hCNPJA["address"]["district"]
 ? "Cidade: "+ hCNPJA["address"]["city"]
@@ -119,8 +117,8 @@ Return hJson
 		{"area":"21","number":"32244477"}],
 	"emails":[{"address":"atendimentofiscossco@petrobras.com.br",
 	"domain":"petrobras.com.br"}],
-"mainActivity":{"id":1921700,"text":"Fabrica‡Æo de produtos do refino de petr¢leo"},
-"sideActivities":[{"id":600001,"text":"Extra‡Æo de petr¢leo e g s natural"},
-{"id":3520401,"text":"Produ‡Æo de g s; processamento de g s natural"},
-{"id":4681801,"text":"Com‚rcio atacadista de  lcool carburante, biodiesel, gasolina e demais derivados de petr¢leo, exceto lubrificantes, nÆo realizado por transportador re"}]}
+"mainActivity":{"id":1921700,"text":"Fabricaâ€¡Ã†o de produtos do refino de petrÂ¢leo"},
+"sideActivities":[{"id":600001,"text":"Extraâ€¡Ã†o de petrÂ¢leo e gÂ s natural"},
+{"id":3520401,"text":"Produâ€¡Ã†o de gÂ s; processamento de gÂ s natural"},
+{"id":4681801,"text":"Comâ€šrcio atacadista de Â lcool carburante, biodiesel, gasolina e demais derivados de petrÂ¢leo, exceto lubrificantes, nÃ†o realizado por transportador re"}]}
 */
