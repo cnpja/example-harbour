@@ -17,7 +17,9 @@ git clone https://github.com/cnpja/example-harbour.git
 3\. Execute a CLI do Harbour para criar o arquivo executável:
 
 ```
-hbmk2 cnpja
+hbmake cnpja
 ```
 
 4\. Abra o recém criado `cnpja.exe` para testar.
+
+Não precisa de nenhuma lib extra para compilar! ;)
