@@ -22,4 +22,4 @@ hbmake cnpja
 
 4\. Abra o recém criado `cnpja.exe` para testar.
 
-Não precisa de nenhuma lib extra para compilar! ;)
+*Não precisa de nenhuma lib extra para compilar! ;)
