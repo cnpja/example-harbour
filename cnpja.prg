@@ -33,29 +33,38 @@ hCNPJA := JSontoHash(JSONCNPJ)
 ? "DADOS DA EMPRESA"
 ? "CNPJ: "+TRANSFORM(cCNPJA, "@R 99.999.999/9999-99")
 ? "NOME: "+hCNPJA["company"]["name"]
+? "Nome de fantasia: "+IIF(!EMPTY(hCNPJA["alias"]), hCNPJA["alias"], "")
 ? "Endereço: "+ hCNPJA["address"]["street"]+", "+hCNPJA["address"]["number"]
 ? "Complemento: "+IIF(!EMPTY(hCNPJA["address"]["details"]), hCNPJA["address"]["details"], "")
 ? "Bairro: "+ hCNPJA["address"]["district"]
 ? "Cidade: "+ hCNPJA["address"]["city"]
 ? "UF: "+ hCNPJA["address"]["state"]
 ? "CEP: "+TRANSFORM(hCNPJA["address"]["zip"], "@R 99999-999")
+****
+* Nome de Fantasia e Complemento pode retornar NULL dando erro de variável indefinida
+* Portanto, é preciso testar se o retorno é vazio ou não antes, pois são dados opcionais.
+****
 ?
 ? "CONTATOS"
 nTELS := LEN(hCNPJA["phones"])
-FOR X=1 TO nTELS
-	cTEL := hCNPJA["phones"][X]["area"] + hCNPJA["phones"][X]["number"]
-	IF LEN(cTEL)=10
-		cTEL := TRANSFORM(cTEL, "@R (99) 9999-9999")
-	ELSE
-		cTEL := TRANSFORM(cTEL, "@R (99) 99999-9999")
-	ENDIF
-	? cTEL
-NEXT X
+IF nTELS >= 1 // PODE SER 0 E DAR ERRO SE NÃO TIVER 
+	FOR X=1 TO nTELS
+		cTEL := hCNPJA["phones"][X]["area"] + hCNPJA["phones"][X]["number"]
+		IF LEN(cTEL)=10
+			cTEL := TRANSFORM(cTEL, "@R (99) 9999-9999")
+		ELSE
+			cTEL := TRANSFORM(cTEL, "@R (99) 99999-9999")
+		ENDIF
+		? cTEL
+	NEXT X
+ENDIF
 
 nEMAILS := LEN(hCNPJA["emails"])
-FOR X=1 TO nEMAILS
-	? "Email: "+hCNPJA["emails"][X]["address"]
-NEXT	
+IF nEMAILS >= 1  // PODE SER 0 E DAR ERRO SE NÃO TIVER
+	FOR X=1 TO nEMAILS
+		? "Email: "+hCNPJA["emails"][X]["address"]
+	NEXT	
+ENDIF
 // RETURN hCNPJA
 
 Function JSontoHash( cStringJson )
