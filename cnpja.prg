@@ -27,7 +27,7 @@ hCNPJA := HASH()
 JSONCNPJ := HB_AnsiToOem(http:responseText)
 
 // DECODIFICA JSON
-// hb_jsondecode( response, @hCNPJA )
+// hb_jsondecode( JSONCNPJ, @hCNPJA )
 hCNPJA := JSontoHash(JSONCNPJ)
 
 ? "DADOS DA EMPRESA"
